@@ -49,7 +49,7 @@ class DraggableView extends Component {
         const { isInverseDirection } = this.props;
 
         var isGoingToUp = velocityY < 0 ? !isInverseDirection : isInverseDirection;
-        var endPosition = isGoingToUp ? finalPosition + 50 : initialPositon + 50;
+        var endPosition = isGoingToUp ? finalPosition + 1 : initialPositon + 1;
 
         var position = new Animated.Value(positionY);
         position.removeAllListeners();
@@ -68,7 +68,7 @@ class DraggableView extends Component {
     };
 
     onUpdatePosition(position) {
-        position = position - 50;
+        position = position - 1;
         this.state.position.setValue(position);
         this._previousTop = position;
         const { initialPosition } = this.state;
