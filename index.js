@@ -35,8 +35,8 @@ class DraggableView extends Component {
      }
 
      close() {
-         if (this.state.position._value !== this.state.finalPosition)
-             return
+        if (this.state.position._value !== this.state.finalPosition)
+            return
 
         this.startAnimation(-90, 100, this.state.finalPosition, null, this.state.initialPositon);
         this.props.onRelease && this.props.onRelease(true); // only add this line if you need to detect if the drawer is up or not
